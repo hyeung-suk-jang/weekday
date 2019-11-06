@@ -106,6 +106,7 @@ ul.bxslider {
 .bx-wrapper .bx-next:focus {
   opacity: 1;
 }
+
 .bx-wrapper .bx-controls-direction a {
   position: absolute;
   top: 50%;
@@ -116,6 +117,7 @@ ul.bxslider {
   text-indent: -9999px;
   z-index: 99;
   background-image: url(../images/slide_nav_01.png);
+  background-size: cover;
 }
 .bx-wrapper .bx-controls-direction a.disabled {
   display: none;
@@ -176,4 +178,34 @@ ul.bxslider {
   display: block;
   font-size: .85em;
   padding: 10px;
+}
+
+@media screen and (max-width:1199px){
+  .bx-wrapper .bx-controls-direction a{
+    width: 27.5px;
+    height: 48.5px;
+ 
+}
+.bx-wrapper .bx-next {
+  right: 30px;
+  background-position: -27.5px 0;
+}
+.bx-wrapper .bx-prev {
+  left: 30px;
+}
+}
+
+@media (max-width:640px){
+  .bx-wrapper .bx-controls-direction a{
+    width: 20px;
+    height: 35px;
+ 
+}
+.bx-wrapper .bx-next {
+  right: 10px;
+  background-position: -20px 0;
+}
+.bx-wrapper .bx-prev {
+  left: 10px;
+}
 }

@@ -22,6 +22,7 @@ $btn.on("click", function(evt){
     evt.preventDefault();
     $(this).toggleClass("on");
     $gnb.fadeToggle();
+    $btnSub.children().children().slideUp();
     
 });
 
@@ -29,15 +30,25 @@ $btn.on("click", function(evt){
 
 var $btnSub=$(".gnb>div>ol>li")
 
-    $btnSub.on("click",function(evt){
-        evt.preventDefault();
-        $(this).children().slideDown()
+
+    $btnSub.on("click",function(){
         
+        $(this).children().children().slideDown();
+        $(this).siblings().children().children().slideUp();
+        
+        $(this).children().css({
+            "color":"#333"
+        })
+        $(this).siblings().children().css({
+            "color":"#fff"
+            
+        })
+  
     });
 
 //아이템
 
-var $item=$("section>.main-section>.product-2>ul>li>a>img.on");
+var $item=$("main>.main-section>.product-2>ul>li>a>img.on");
     
     $item.mouseover(function(){
         $(this).css({
