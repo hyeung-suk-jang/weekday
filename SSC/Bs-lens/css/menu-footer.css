@@ -1,0 +1,272 @@
+/* 공통 메뉴부분 */
+body{
+    font-size: 15px;
+    font-family: 'Noto Sans KR','Roboto','Nanum Gothic', sans-serif;
+    width: 100%;
+    color: #666;
+    line-height: 1.7;
+    font-weight: 400;
+    min-width:500px;
+}
+
+#wrap{
+    width: 100%;
+ 
+}
+
+/* gnb 메뉴 */
+
+.menu-btn>a{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 1000;
+    display: block;
+    width: 55px;
+    height: 55px;
+    background-image: url(../images/nav_btn.png);
+ }
+ .menu-btn>a.on{
+     background-image: url(../images/nav_btn_off.png);
+ }
+ .gnb{
+    display: none;
+    position: fixed;
+    right: 0px;
+    z-index: 999;
+    width: 500px;
+    height: 100%;
+    min-height: 100%;
+    background: rgba(165, 199, 129, 1);
+    opacity:0.95;
+    top: 0px;
+    overflow-y: auto;
+  }
+  .gnb>div{
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%,-50%); 
+     width: 100%;
+     text-align: center;
+  }
+ .gnb>div>ol>li>a{
+     display: block;
+     font-size: 50px;
+     position: relative;
+     z-index: 9000;
+     text-align: center;
+  
+     color: #fff;
+     line-height: 80px;
+ }
+.gnb>div>ol>li>.depth>ul>li a::after{
+     display: block;
+     width:100%;
+     height: 1px; 
+     margin-top: -6px;
+     content:"" ;
+     border-bottom:1px solid #000; 
+     transform:scale(0); 
+     transition:all 0.4s;
+     }
+ .gnb>div>ol>li>.depth>ul>li:hover a:after{
+    width: 100%;
+   
+     transform:scale(1);
+    } 
+ .gnb>div>ol>li>.depth>ul{
+    display: none;
+  }
+
+ .gnb>div>ol>li>.depth>ul>li>a{
+     display: inline-block;
+     color: #333;
+     font-size: 30px;
+     font-weight: 300;
+     letter-spacing: -1px;
+ 
+ }
+
+ /* header logo */
+ header>h1{
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    z-index:100;
+    width: 156px;
+    height: 71px;
+    text-indent: -9999px;
+    background-image: url(../images/logo.png);
+}
+ /* 공통 footer부분 */
+
+ 
+ /* footer */
+
+footer{
+    position: relative;
+    margin: 30px 50px;
+    font-size: 13px;
+    height: 100%;
+}
+footer>div{ 
+    
+    display: flex;
+    justify-content: space-around;
+    top: 50%;
+    float: left; 
+    width: 15%; 
+    
+}
+footer>.footer_logo>h2{
+   
+   width: 156px;
+   height: 71px;
+   text-indent: -9999em;   
+   background-image: url(../images/footlogo.png);
+    background-repeat: no-repeat;
+}
+footer>.info{
+   
+     width: 30%;
+    
+}
+footer>.info>p{
+    display: flex;
+}
+footer>.info>p>a{
+ position: relative;
+ justify-content: space-around;
+ left:20px;
+ width:34px;
+ height: 33px;
+ text-indent: -9999px;
+ background-image: url(../images/info_i.png);
+    background-repeat: no-repeat;
+ font-weight: normal;
+ padding-left: 38px;
+}
+footer>.sns{
+    position: relative;
+    width: 104px;
+    height: 52px;
+   
+}
+footer>.sns>a{
+ position: absolute; 
+ float: left;
+ display: block;
+ width: 52px;
+ height: 52px;
+ text-indent: -9999px;
+ background-repeat: no-repeat;
+}
+footer>.sns>a:nth-child(1){
+ left:10px;
+ background-image: url(../images/sns_01_on.png);
+}
+footer>.sns>a:last-child{
+ right:-15px;
+ background-image: url(../images/sns_02_on.png);
+}
+
+/* gotop 버튼 */
+.goTop{
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/top-btn.png);
+    background-repeat: no-repeat;
+    text-indent: -99999px;
+}
+
+/* 반응형 공통부분 */
+
+
+/* 반응형 */
+@media screen and (max-width: 1199px){
+
+    footer>div{
+        width: inherit;
+        margin: 10px auto;
+        float: none;
+        clear:both;
+        text-align: center;
+    }
+    footer>.info{
+        width:100% ;
+      
+    }
+    
+    footer>.info a{
+        position: absolute;
+        left: 0;
+    }
+    
+}
+
+@media (max-width: 640px){
+    .menu-btn>a{
+        width: 30px;
+        height: 30px;
+        top: 10px;
+        background-size: contain;
+    }
+    header>h1{
+        width: 80px;
+        top: 10px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    
+    }
+    .gnb{
+        width: 85%;
+    }
+    .gnb>div>ol>li>a{
+        font-size: 30px;
+    }
+    .gnb>div>ol>li>.depth>ul>li>a{
+        font-size: 15px;
+        letter-spacing: -0.5px;
+    }
+    
+
+    footer>.footer_logo{
+        width: 100%;
+        
+    }
+ 
+    footer>.footer_logo>h2{
+        width: 80px;  
+        height: 40px;  
+        margin: 0;
+        background-size: contain;  
+    }
+
+footer>.sns{
+    width: 60px;
+}
+footer>.sns>a{
+    
+    width: 26px;
+    height: 26px;
+    background-size: contain;
+}
+footer>.sns>a:nth-child(1){
+    left: 0px;
+}
+footer>.sns>a:nth-child(2){
+    right: 0px;
+}
+
+.goTop{
+    width: 25px;
+    height: 25px;
+    background-size: cover;
+}
+
+}
